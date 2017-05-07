@@ -5,12 +5,13 @@
 	<body>
 	<div>
 	<h1><a href="">Scott's Coffee Blog </a></h1>
-	<p>Published 5/6/2017</p>
-	<h2><a href="">First Post</a></h2>
-	<p>I love coffee</p>
-	<p>Published 5/16/2017</p>
-	<h2><a href="">Second Post</a></h2>
-	<p>I love Darya </p>
+	{% for post in posts %}
+		<div>
+			<p>Published: {{ post.published_date }}</p>
+			<h1><a href="" > {{ post.title }} </a></h1>
+			<p> {{ post.text|linebreaksbr }} </p>
+		</div>
+	{% endfor %}
 	</div>
 	</body>
 </html>
